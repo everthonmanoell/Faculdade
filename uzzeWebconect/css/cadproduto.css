@@ -1,0 +1,64 @@
+* {
+    padding: 0;
+    margin: 0;
+    
+}
+
+h2 {
+    margin-top: 2%;
+    
+    display: flex;
+    justify-content: center;
+    
+
+}
+
+.cadastro {
+    
+    margin-top: 2%;
+    margin-left: 30%;
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    padding: 3%;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-shadow: 2px 2px 10px rgba(7, 7, 7, 0.808);
+    
+
+
+}
+
+.cadastro #img, #nome, #cor, #tamanho, #quantidade, #valor_uni, #descricao{
+    padding: 1%;
+    
+}
+.cadastro .imgg{
+    border: solid 1px;
+    border-radius: 7px;
+}
+
+.cadastro .nome{
+    margin-top: 2%;
+}
+
+.botoes{
+    
+    margin-top: 1%;
+    margin-left: 30%;
+   
+}
+
+.btt1, .btt2{
+    padding: 1%;
+    font-size: 17px;
+    display: inline-block;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-shadow: 2px 2px 10px rgba(7, 7, 7, 0.808);
+}
+
+.btt2{
+    margin-left: 1%;
+}
+
