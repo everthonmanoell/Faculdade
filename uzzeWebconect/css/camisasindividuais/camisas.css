@@ -6,4 +6,12 @@
 main{
     margin-top: 2%;
     border: solid 1px;
+    padding: 1%;
+    display: flex;
 }
+
+main p{
+    padding: auto;
+    margin-left: 1%;
+}
+

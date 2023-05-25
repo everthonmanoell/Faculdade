@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="/css/test.css">
+</head>
+
+<header class="menu">
+  <a href="/telas/produtos/produtos.html" class="menu1">Produtos</a>
+  <a href="/telas/main/cadastroprod.php" class="menu2">Cadastro de Produto</a>
+</header>
+
+<body>
+  <div class="slideshow">
+    <img class="active" src="/imagens/ca1.jpg" alt="Image 1">
+    <img src="/imagens/ca2.jpg" alt="Image 2">
+    <img src="/imagens/ca3.jpg" alt="Image 3">
+    <img src="/imagens/ca4.jpg" alt="Image 4">
+  </div>
+
+  <script>
+    var images = document.querySelectorAll('.slideshow img');
+    var currentIndex = 0;
+
+    setInterval(function () {
+      images[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % images.length;
+      images[currentIndex].classList.add('active');
+    }, 5000);
+  </script>
+
+  <footer class="footer">
+    <p>Uzze - 2023 Projeto de Desenvolvimento Web - 2º Período </p>
+  </footer>
+</body>
+
+</html>
