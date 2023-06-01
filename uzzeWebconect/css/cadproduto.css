@@ -1,22 +1,33 @@
 * {
     padding: 0;
     margin: 0;
-    
-    
+
+
 }
 
-h2 {
-    margin-top: 2%;
-    
+body {
+    background-color: beige;
+}
+
+header {
+    background-color: rgb(163, 130, 130);
+}
+
+h2, h3 {
+
+    padding: 1%;
     display: flex;
     justify-content: center;
-    
 
+}
+
+h3{
+    margin-top: 1%;
 }
 
 .cadastro {
-    
-    margin-top: 2%;
+
+    margin-top: 1%;
     margin-left: 30%;
     display: flex;
     flex-direction: column;
@@ -25,32 +36,59 @@ h2 {
     border: 1px solid transparent;
     border-radius: 4px;
     box-shadow: 2px 2px 10px rgba(7, 7, 7, 0.808);
-    
+
 
 
 }
 
-.cadastro #img, #nome, #cor, #tamanho, #quantidade, #valor_uni, #descricao{
+.cadastro #img,
+#nome,
+#cor,
+#tamanho,
+#quantidade,
+#valor_uni,
+#descricao {
     padding: 1%;
-    
+  
 }
-.cadastro .imgg{
+
+.cadastro #img{
+    padding: 2%;
+}
+
+label[for="img"]{
+    padding: 1%;
+}
+
+.cadastro #img:hover,
+#nome:hover,
+#cor:hover,
+#tamanho:hover,
+#quantidade:hover,
+#valor_uni:hover,
+#descricao:hover {
+    border-color: red;
+
+}
+
+.cadastro .imgg {
     border: solid 1px;
     border-radius: 7px;
 }
 
-.cadastro .nome{
+.cadastro .nome {
     margin-top: 2%;
 }
 
-.botoes{
-    
+.botoes {
+
     margin-top: 1%;
     margin-left: 30%;
-   
+
 }
 
-.btt1, .btt2{
+.btt1,
+.btt2 {
     padding: 1%;
     font-size: 17px;
     display: inline-block;
@@ -59,15 +97,26 @@ h2 {
     box-shadow: 2px 2px 10px rgba(7, 7, 7, 0.808);
 }
 
-.btt2{
+.btt1:hover,
+.btt2:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+
+
+.btt2 {
     margin-left: 1%;
 }
 
-footer{
+footer {
+    margin-top: 3%;
     
-    bottom: 1%;
-    padding: 1%;
-    
+    background-color: rgb(163, 130, 130);
+
 }
 
-
+footer p{
+    color: white;
+    padding: 10px;
+}
