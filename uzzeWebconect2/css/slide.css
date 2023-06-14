@@ -1,58 +1,6 @@
-body {
-    background-color: beige;
-    padding: 0%;
-    margin: 0%;
-}
-
-header{
-    background-color: rgb(163, 130, 130);
-}
-
-
-
-header {
-    display: flex;
-    align-items: left;
-    justify-content: left;
-    
-}
-
-header a{
-    padding: 1%;
-    margin-left: 2%;
-
-}
-
-header .menu1, .menu2{
-    color: white;
-}
-
-
-
-header a {
-    font-size: 18px;
-    display: inline-block;
-    line-height: 24px;
-    font-weight: 400;
-    color: rgb(0, 0, 0, 0.87);
-    cursor: pointer;
-    padding: 5px 6.7px;
-    text-decoration: none;
-    transition: transform 0.3;
-
-}
-
-header .menu2{
-    margin-left: 1%;
-}
 
 .destaque{
     margin-left: 2%;
-    
-}
-
-header .menu1:hover, .menu2:hover {
-    transform: scale(1.2);
     
 }
 
@@ -144,15 +92,4 @@ section.slider {
 
 #radio4:checked~.primeiro {
     margin-left: -75%;
-}
-
-
-footer {
-    margin-top: 7%;
-    padding: 1px;
-    background-color: rgb(163, 130, 130);
-}
-
-footer p{
-    color: white;
 }
