@@ -1,43 +1,49 @@
-<?php include __DIR__."/includes/select-formulario.php"; ?>
+
 
 <?php include __DIR__."/includes/header.php"; ?>
 
-<section>
+<section class="produtos">
         <?php
-            // Simulação dos dados do banco de dados
-            $products = array(
-                array(
-                    'nome' => 'Produto 1',
-                    'cor' => 'Azul',
-                    'tamanho' => 'M',
-                    'quantidade' => 10,
-                    'valor' => 29.99,
-                    'descricao' => 'Descrição do Produto 1',
-                    'imagem' => 'https://picsum.photos/200'
-                ),
-                array(
-                    'nome' => 'Produto 2',
-                    'cor' => 'Vermelho',
-                    'tamanho' => 'G',
-                    'quantidade' => 5,
-                    'valor' => 39.99,
-                    'descricao' => 'Descrição do Produto 2',
-                    'imagem' => 'https://picsum.photos/200'
-                ),
-                // Adicione mais produtos conforme necessário
-            );
+            try {
 
-            // Exibição dos cards de produtos
-            foreach ($products as $product) {
-                echo '<div class="product-card">';
-                echo '<img src="' . $product['imagem'] . '" alt="' . $product['nome'] . '">';
-                echo '<h3>' . $product['nome'] . '</h3>';
-                echo '<p>Cor: ' . $product['cor'] . '</p>';
-                echo '<p>Tamanho: ' . $product['tamanho'] . '</p>';
-                echo '<p>Quantidade: ' . $product['quantidade'] . '</p>';
-                echo '<p>Valor: R$ ' . number_format($product['valor'], 2) . '</p>';
-                echo '<p>' . $product['descricao'] . '</p>';
-                echo '</div>';
+                // Configurações do banco de dados
+                $host = 'localhost';
+                $dbname = 'uzzedb';
+                $usuario = 'root';
+                $senha = '';
+                // Conexão com o banco de dados usando PDO
+                $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $usuario, $senha);
+                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            
+                // Query para buscar todos os produtos da tabela "cadastroproduto"
+                $query = $pdo->query("SELECT * FROM produto");
+                $produtos = $query->fetchAll(PDO::FETCH_ASSOC);
+            
+                // Verifica se há produtos cadastrados
+                if (count($produtos) > 0) {
+                    foreach ($produtos as $produto) {
+                        // Recupera a imagem correspondente ao id_img
+                        $imagemQuery = "SELECT * FROM imagem WHERE id_img = " . $produto['id_img'];
+                        $imagemResult = $pdo->query($imagemQuery);
+                        $imagemRow = $imagemResult->fetch(PDO::FETCH_ASSOC);
+                        $imagemPath = $imagemRow['path'];
+            
+                        echo '<div class="product">';
+                        echo '<img class="jerseyImgBox" src="' . $imagemPath . '" alt="' . $produto['nome'] . '"/>';
+                        echo '<p class="productTitle">' . $produto['nome'] . '</p>';
+                        echo '<p class="stars">⭐⭐⭐⭐★</p>';
+                        echo '<p class="currency">R$ <span class="price">' . $produto['preco'] . '</span></p>';
+                        echo '<button onClick="window.location.href=\'' . $produto['PgVenda'] . '\'" class="productBtn">';
+                        echo 'Ver mais';
+                        echo '</button>';
+                        echo '</div>';
+                    }
+                } else {
+                    echo "Nenhum produto cadastrado.";
+                }
+            } catch (PDOException $e) {
+                // Trata possíveis erros de conexão ou query
+                echo "Erro: " . $e->getMessage();
             }
         ?>
     </section>

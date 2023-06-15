@@ -19,6 +19,8 @@
 
         <label for="imagem">Imagem:</label>
         <input type="file" id="imagem" name="imagem"><br>
+        <div class="btn">
+            <input type="submit" value="Cadastrar">
 
-        <input type="submit" value="Enviar">
+        </div>
     </form>
