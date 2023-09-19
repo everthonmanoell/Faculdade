@@ -1,1 +1,0 @@
-Olá, Wagner. Deixei os arquivos com extensão “html” pois quando coloco com a extensão “php”, ele não aceita a estilização. Ainda estou à procura de ajustar esse problema. Porém, consegui conectar com o banco local pelo xamp. Obrigado pela atenção! 
